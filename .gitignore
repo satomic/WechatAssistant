@@ -46,6 +46,11 @@ coverage.xml
 *.cover
 .hypothesis/
 
+# IDE
+.idea/
+
+*.png
+
 # Translations
 *.mo
 *.pot
