@@ -48,8 +48,10 @@ coverage.xml
 
 # IDE
 .idea/
+pkls/
 
 *.png
+
 
 # Translations
 *.mo

@@ -1,5 +1,20 @@
 这个MD格式的文本其实是包含格式的，当前先不管格式了。有时间再弄吧
 
+requirements:
+    python3.5
+    pip install wxpy
+
+get start:
+    python3原生执行
+        python3 main.py nickname (这里的nickname是可以任意指定的，并不一定要是微信名，但是这个值会跟微信登录信息绑定)
+    windows: 点击windows_start.bat
+    linux:   点击linux_start.sh
+
+启动起来如下画面
+
+![avatar](https://raw.githubusercontent.com/satomic/WechatAssistant/master/‪started.PNG)
+
+=======================================
 原始：
 1. 目标用户的搜索与收集
 	1.1 自动拉好友入群（自动后台摇朋友？？）
@@ -32,7 +47,7 @@
 4. 脚本操作
     接收特定指令，可以由python执行
 
-5. python3下的log系统
+5. python3下的log系统（完成）
     基础能力
 
 6. license系统
