@@ -12,7 +12,7 @@ get start:
 
 启动起来如下画面
 
-![avatar](https://raw.githubusercontent.com/satomic/WechatAssistant/master/‪started.png)
+![avatar](https://raw.githubusercontent.com/satomic/WechatAssistant/master/started.png)
 
 =======================================
 原始：
