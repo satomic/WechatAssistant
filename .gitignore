@@ -46,12 +46,6 @@ coverage.xml
 *.cover
 .hypothesis/
 
-# IDE
-.idea/
-pkls/
-
-*.png
-
 
 # Translations
 *.mo
@@ -107,3 +101,8 @@ ENV/
 # mypy
 .mypy_cache/
 logs/
+# IDE
+.idea/
+pkls/
+build/
+dist/

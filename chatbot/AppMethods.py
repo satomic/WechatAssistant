@@ -1,5 +1,5 @@
-#coding=utf-8
-
+# coding=utf-8
+from Environment import environment
 import os
 
 
@@ -11,9 +11,11 @@ def get_pkls_path(nickname, work_dir):
     :return: 
     '''
     pkls_dir = os.path.join(work_dir, "pkls")
+
     # 如果没有pkls文件夹，则创建
     if not os.path.exists(pkls_dir):
         os.makedirs(pkls_dir)
+
     # 创建存储当前用户的pkls的文件夹
     nickname_dir = os.path.join(pkls_dir, nickname)
     if not os.path.exists(nickname_dir):

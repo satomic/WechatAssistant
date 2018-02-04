@@ -1,38 +1,20 @@
-﻿#coding=utf-8
-
+﻿# coding=utf-8
+from Environment import environment
 import os
 import logging
-from common.log.mylogging import mylogger
-import traceback
 import wxpy
 from chatbot.AppMethods import *
 from sys import argv
 
 
-# 日志打印开关
-IS_LOGGER = True
-# IS_LOGGER = False
-
-work_dir = os.path.abspath(os.path.dirname(__file__.split('?')[0]))
-
-
-def init_logging():
-    try:
-        if IS_LOGGER:
-            mylogger.addLogFilePath(os.path.join(work_dir, 'logs'))
-    except Exception as e:
-        logging.error(traceback.format_exc())
-
-init_logging()
-logging.info("hello 鏡ちゃん")
-
 logging.info("the script is called: %s", argv[0])
+nickname = "default"
 if len(argv) > 1:
     logging.info("the first variable is: %s", argv[1:])
     nickname = argv[1]
 
 # 初始化bot
-login_pkl, puid_pkl = get_pkls_path(nickname, work_dir)
+login_pkl, puid_pkl = get_pkls_path(nickname, environment.work_dir)
 bot = wxpy.Bot(login_pkl)
 bot.enable_puid(path=puid_pkl)
 

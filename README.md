@@ -15,6 +15,7 @@ get start:
 ----------------
 ![avatar](https://raw.githubusercontent.com/satomic/WechatAssistant/master/started.png)
 
+---
 
 原始idea
 ----------------
@@ -29,8 +30,12 @@ get start:
 
 * 自动对话/聊天
 
+---
+
+
 整理后
 ----------------
+
 * 好友请求时
     * 自动同意请求
     * 发送问候信息，以及基本的操作模式
@@ -48,6 +53,8 @@ get start:
 * python3下的log系统（完成）
     * 基础能力
 * license系统
+* exe打包 pyinstaller
+* 外部特殊功能加载
 
 
 
