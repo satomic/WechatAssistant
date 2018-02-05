@@ -21,6 +21,9 @@ class Environment(object):
         # 日志目录
         self.logs_dir = os.path.join(self.work_dir,logs_dir)
 
+        # 测试资源目录
+        self.test_res_dir = os.path.join(self.work_dir,"testcase","test_res")
+
         try:
             if self.is_logger:
                 mylogger.addLogFilePath(os.path.join(self.work_dir, self.logs_dir))
