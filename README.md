@@ -52,9 +52,18 @@ get start:
     * 接收特定指令，可以由python执行
 * python3下的log系统（完成）
     * 基础能力
+* unittest framework
+    * 支持加载全局testcase
+    * 结构与代码结构保持一致
 * license系统
 * exe打包 pyinstaller
 * 外部特殊功能加载
+
+
+bug
+---
+* 单独跑testcase报错，加载class失败问题
+* 单独跑testcase，明明python interpretor选择的是3.5版本，却依旧是调用2.7版本
 
 
 
