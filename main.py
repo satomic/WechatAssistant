@@ -1,17 +1,42 @@
 ﻿# coding=utf-8
-from Environment import environment
+from Environment import Environment
 import os
 import logging
 import wxpy
 from chatbot.AppMethods import *
 from sys import argv
+import sys
 
+# main方法调用则传入真实参数
+work_dir = os.path.dirname(argv[0])
+environment = Environment(work_dir=work_dir)
 
-logging.info("the script is called: %s", argv[0])
+# logging.info("the script is called: %s", argv[0])
 nickname = "default"
 if len(argv) > 1:
-    logging.info("the first variable is: %s", argv[1:])
+    '''
+    nickname
+    -v
+    -h
+    '''
+    argv_1 = argv[1]
+    if argv_1 in ["-v","-V","-version","--version"]:
+        print("version: %s" % environment.version)
+        sys.exit(0)
+    if argv_1 in ["-h","-H","-help","--help"]:
+        print(\
+'''
+double click the exe, with nickname: default
+nickname: start with nickname
+-v version
+-h help
+''')
+        sys.exit(0)
     nickname = argv[1]
+
+
+
+
 
 # 初始化bot
 login_pkl, puid_pkl = get_pkls_path(nickname, environment.work_dir)
