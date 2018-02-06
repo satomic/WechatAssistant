@@ -1,3 +1,14 @@
+快速上手
+---
+windows环境下，[点我下载exe](https://github.com/satomic/WechatAssistant/raw/master/dist/WechatAssistant.exe)，双击运行。
+
+* double click the exe, with nickname: default
+* nickname: start with nickname
+* -v: version
+* -h: help
+
+---
+
 requirements:
 ----------------
 ```
