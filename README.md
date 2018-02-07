@@ -11,11 +11,11 @@ windows环境下，[点我下载exe](https://github.com/satomic/WechatAssistant/
 
 requirements:
 ----------------
-```
-    python3.5
+```batch
+    python3.5  # this means that you need to install python3.5 on your PC first
     pip install wxpy
 ```
-get start:
+developer get start:
 ----------------
 * python3原生执行
     * python3 main.py nickname  注：这里的nickname是可以任意指定的，并不一定要是微信名，但是这个值会跟微信登录信息绑定)
@@ -25,21 +25,6 @@ get start:
 启动画面
 ----------------
 ![avatar](https://raw.githubusercontent.com/satomic/WechatAssistant/master/started.png)
-
----
-
-原始idea
-----------------
-* 目标用户的搜索与收集
-    * 自动拉好友入群（自动后台摇朋友？？）
-    * 群发消息
-    * 群内文件的快速查找……分类？？？
-    * 好友申请设置时间自动通过
-* 朋友圈/公众号  简易编辑界面，争取一条龙服务，操作更简便
-
-* 友情提醒操作流程？？？
-
-* 自动对话/聊天
 
 ---
 
@@ -69,6 +54,28 @@ get start:
 * license系统
 * exe打包 pyinstaller
 * 外部特殊功能加载
+* master账号功能
+    * 在登录机器人的账号中，把你的另一个号备注为master后启动程序
+    * 通过master账号往机器人账号可以发送控制消息，当前已经支持的有：
+        * 截屏 —— 自动截取当前登录机器人的电脑的屏幕画面并返回
+        * 其他开发中。。。。
+
+
+
+原始idea
+----------------
+* 目标用户的搜索与收集
+    * 自动拉好友入群（自动后台摇朋友？？）
+    * 群发消息
+    * 群内文件的快速查找……分类？？？
+    * 好友申请设置时间自动通过
+* 朋友圈/公众号  简易编辑界面，争取一条龙服务，操作更简便
+
+* 友情提醒操作流程？？？
+
+* 自动对话/聊天
+
+---
 
 
 bug
