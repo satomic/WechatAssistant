@@ -1,6 +1,6 @@
 快速上手
 ---
-windows环境下，[点我下载exe](https://github.com/satomic/WechatAssistant/raw/master/dist/WechatAssistant.exe)，双击运行。
+windows环境下，[点我下载exe](https://github.com/satomic/WechatAssistant/raw/master/dist/WechatAssistant.exe)，双击运行。本地登录pkl信息的缓存有效期似乎有点短，真是让人抑郁的现实。。。
 
 * double click the exe, with nickname: default
 * nickname: start with nickname
@@ -59,6 +59,8 @@ developer get start:
     * 通过master账号往机器人账号可以发送控制消息，当前已经支持的有：
         * 截屏 —— 自动截取当前登录机器人的电脑的屏幕画面并返回
         * 其他开发中。。。。
+    * 支持自己作为master身份了，不过开启了except_self=False之后，群消息也被注册到这里来了。这就尴尬了
+
 
 
 

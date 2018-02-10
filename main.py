@@ -42,23 +42,41 @@ login_pkl, puid_pkl = get_pkls_path(nickname, environment.work_dir)
 bot = wxpy.Bot(login_pkl)
 bot.enable_puid(path=puid_pkl)
 
+# 在 Web 微信中把自己加为好友
+# bot.self.add()
+# bot.self.accept()
+
+# 发送消息给自己
+# bot.self.send('能收到吗？')
+
+# master消息处理
+# master = bot.friends().search("master")[0]
+master_msg_handler = MasterMsgHandler(bot, [], environment.work_dir)
 
 # 自动回复所有好友（非群）的消息
 # 初始化图灵机器人 (API key 申请: http://tuling123.com)，这个KEY是我自己的
 tuling = wxpy.Tuling(api_key='2913bf7a0ff24d998c2149f6a9bc0dc7')
-@bot.register(bot.friends(update=True))
+
+# 这里的except_self启动之后，对群里面的自己的消息也是生效的，我简直无语了。。。
+@bot.register(bot.friends(update=True),except_self=False)
 def reply_friends(msg):
-    logging.info("friends: %s" % msg)
-    tuling.do_reply(msg)
+    # logging.info("%s -> %s" % (msg.sender, msg.text))
+    if msg.sender in master_msg_handler.masters:
+        logging.info("self msg: %s" % msg.text)
+        master_msg_handler.handle(msg.text)
+        return
 
+    # tuling.do_reply(msg)
 
-# master消息处理
-master = bot.friends().search("master")[0]
-master_msg_handler = MasterMsgHandler(bot, master, environment.work_dir)
-@bot.register(master)
-def reply_self(msg):
-    logging.info("master: %s" % msg)
-    master_msg_handler.handle(msg.text)
+# @bot.register(bot.groups())
+# def reply_groups(msg):
+#     print(msg)
+#     print(msg.sender)
+#     print(master_msg_handler.masters)
+#     if msg.sender in master_msg_handler.masters:
+#         logging.info("%s -> %s" % (msg.sender, msg.text))
+#         logging.info("self msg: %s" % msg.text)
+        # master_msg_handler.handle(msg.text, msg.chat)
 
 
 # 开始运行
